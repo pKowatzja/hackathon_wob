@@ -114,5 +114,12 @@ Ranking: high -> Begründung: Verletzungsgefahr für Kinder
 """
 
 ranking_user_prompt = """
+Bitte validiere und ranke diesen Schadensfall.
 
+Titel: {{titel}}
+Bild: {{Bild}}
+Kategorie: {{kategorie}}
+Geo-Position: {{geo_location}}
+Beschreibung: {{beschreibung}}
+Ranking:
 """
