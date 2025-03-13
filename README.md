@@ -19,7 +19,7 @@
   - stellt es eine Beeinträchtigung oder Gefährdung dar?
   - Lage & evtl. Veranstaltungen in nächster Zeit?
   - KI zum Bilder auswerten als Zusatzinfo?
-- evtl. Klassifizierung in 'Sachschaden' oder 'Wartungsbedarf' (auch in betracht auf gefährdung)-
+- evtl. Klassifizierung in 'Sachschaden' oder 'Wartungsbedarf' (auch in betracht auf gefährdung)
 - automatisierte Verteilung an zuständige Stellen
   - auch verifizieren
 - Dashboard zugang für jede Stelle mit zugeteilten Fällen

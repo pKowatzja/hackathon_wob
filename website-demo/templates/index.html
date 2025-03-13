@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smarter Bürgerservice</title>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   </head>
   <body>
@@ -26,30 +29,19 @@
       <div class="container">
         <div class="filter">
           <label for="search">Suche:</label>
-          <input
-            type="text"
-            id="search"
-            placeholder="Schadensmeldung suchen..."
-          />
+          <input type="text" id="search" placeholder="Query stellen..." />
         </div>
-
-        <div class="dashboard" id="dashboard"></div>
-
-        <div id="map"></div>
       </div>
 
-      <div id="modal" class="modal">
-        <div class="modal-content">
-          <span class="close" id="modalClose">&times;</span>
-          <h2 id="modalTitle">Schadensmeldung Details</h2>
-          <img
-            id="modalImage"
-            src=""
-            alt="Bild"
-            style="width: 100%; max-height: 200px; object-fit: cover"
-          />
-          <p id="modalDescription"></p>
-        </div>
+      <div class="container">
+        <h1>Frage an LLM</h1>
+        <input
+          type="text"
+          id="questionInput"
+          placeholder="Geben Sie Ihre Frage ein..."
+        />
+        <button id="submitButton">Frage absenden</button>
+        <div id="result"></div>
       </div>
 
       <footer class="site-footer">
@@ -68,6 +60,6 @@
 
     <!-- Leaflet JS für die Karte -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
