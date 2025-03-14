@@ -102,6 +102,15 @@ Geo-Position: Ort des festgestellten Schadens.
 Beschreibung: Mülleimer im Park ist überfüllt
 
 Ranking: low -> Begründung: nervig, aber nicht Lebensgefährlich.
+
+Beispiel 3:
+Titel: Scharfkantige Eisen an Grundschule
+Bild: Bild eines abgeknickten Laternenmastes.
+Kategorie: Straßen bzw. Wegschäden
+Geo-Position: Ort des festgestellten Schadens.
+Beschreibung: An der Grundschule ragen scharfkantige Armierungseisen aus einem umgestürzten Laternenmast
+
+Ranking: high -> Begründung: Verletzungsgefahr für Kinder
 """
 
 ranking_user_prompt = """
