@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smarter Bürgerservice</title>
+    <title>BYTE.US</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
@@ -16,7 +16,7 @@
 
       <header class="site-header">
         <div class="header-content">
-          <div class="logo">Smarter Bürgerservice</div>
+          <div class="logo">BYTE.US</div>
           <nav>
             <a href="#">Startseite</a>
             <a href="#">Meldungen</a>
@@ -27,21 +27,86 @@
       </header>
 
       <div class="container">
-        <div class="filter">
-          <label for="search">Suche:</label>
-          <input type="text" id="search" placeholder="Query stellen..." />
-        </div>
-      </div>
+        <h1>Neuen Mangelbericht erstellen</h1>
+        <form id="damageReportForm">
+          <div class="form-group">
+            <label for="date">Datum:</label>
+            <input type="date" id="date" name="date" required />
+          </div>
 
-      <div class="container">
-        <h1>Frage an LLM</h1>
-        <input
-          type="text"
-          id="questionInput"
-          placeholder="Geben Sie Ihre Frage ein..."
-        />
-        <button id="submitButton">Frage absenden</button>
-        <div id="result"></div>
+          <div class="form-group">
+            <label for="title">Titel</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="z.B. Kaputte Parkbank"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Beschreibung</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="4"
+              placeholder="Beschreiben Sie den Mangel ausführlich..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Kategorie</label>
+            <select id="category" name="category" required>
+              <option value="">Bitte wählen...</option>
+              <option value="Straßen bzw. Wegschäden">
+                Straßen bzw. Wegschäden
+              </option>
+              <option value="Straßenbeleuchtung">Straßenbeleuchtung</option>
+              <option value="Defekte Ampel">Defekte Ampel</option>
+              <option value="Abfallentsorgung">Abfallentsorgung</option>
+              <option value="Vandalismus">Vandalismus</option>
+              <option value="Grünfläche/Unkraut/Eichenprozessionsspinner">
+                Grünfläche/Unkraut/Eichenprozessionsspinner
+              </option>
+              <option value="Schaden an Brunnen">Schaden an Brunnen</option>
+              <option value="Verstopfter Gulli">Verstopfter Gulli</option>
+              <option value="Tiere">Tiere</option>
+              <option value="Verkehrshinweise">Verkehrshinweise</option>
+              <option value="Straßenreinigung/Winterdienst">
+                Straßenreinigung/Winterdienst
+              </option>
+              <option value="Spielplatz verunreinigt/defekt">
+                Spielplatz verunreinigt/defekt
+              </option>
+              <option value="Bürgeranregungen">Bürgeranregungen</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="images">Bilder:</label>
+            <input
+              type="file"
+              id="images"
+              name="images"
+              multiple
+              accept="image/*"
+            />
+            <label for="images" class="file-upload-label">
+              <span class="upload-icon">📷</span> Bilder hochladen
+            </label>
+            <div class="file-info" id="fileInfo">Keine Dateien ausgewählt</div>
+            <div id="imagePreview" class="image-preview"></div>
+          </div>
+
+          <button type="submit" id="submitReport">Bericht absenden</button>
+        </form>
+
+        <div id="reportResult" class="report-result hidden">
+          <h2>Ergebnis der Analyse:</h2>
+          <div id="analysisContent"></div>
+        </div>
       </div>
 
       <footer class="site-footer">
@@ -52,13 +117,12 @@
             <a href="#">Kontakt</a>
           </div>
           <div class="footer-copy">
-            <p>&copy; 2025 Smarter Bürgerservice. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 BYTE.US. Alle Rechte vorbehalten. by ByteMe-AI</p>
           </div>
         </div>
       </footer>
     </div>
 
-    <!-- Leaflet JS für die Karte -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>

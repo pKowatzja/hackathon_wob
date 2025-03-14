@@ -30,3 +30,22 @@
 
 - Wertet Meldungen aus, die dann entsprechend weitergeleitet werden.
 - Gruppierung
+
+####
+
+Beispiele Demo:
+
+- high:
+
+  - Brückengeländer
+
+- medium:
+
+  - Stolperfallen auf gehweg
+  - Defekte Parkbank: Die Parkbank ist stark beschädigt
+    - defekte laterne: Die laterne ist beschädigt
+
+- low:
+  - Rasen zu hoch: Der Rasen ist zu hoch für meinen Dackel - Grün
+  - Graffiti/Sticker auf Bank
+  - Kaugummi auf den Gehwegplatten
